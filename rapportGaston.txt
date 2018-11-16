@@ -1,0 +1,21 @@
+## Refactoring
+
+Nous utilisons l'IDE IntelliJ et son plugin Sonarlint pour identifier dynamiquement les bugs et les code smells afin de les corriger.
+
+- Merge this if statement with the enclosing one :
+  Pour éviter un trop grand nombre de fonctions if inutiles, il est possible de les fusionner avec l'opérateur &&.
+  
+- Refactor this method to reduce its Cognitive Complexity :
+  Il est déconseillé de créer des méthodes beaucoup trop longues et complexes. Pour pallier à ce problème, nous scindons la méthode updateQuality() en plusieurs méthodes plus petites et plus simples :
+  - private boolean isNotSpoiled(int i) vérifie qu'un item n'a pas dépassé sa date de péremption
+  - private void increaseQuality(int i) augmente la qualité des items Aged Brie et Backstage.
+  - private void updateSellIn(int i) diminue le paramètre SellIn d'un item.
+  - private void updateSpoiledItemQuality(int i) fait évoluer la qualité des items ayant dépassé leur date de péremption.
+  
+- Correct one of the identical sub-expressions on both sides of operator "-" :
+  Nous remplaçons "items[i].quality - items[i].quality" par "0".
+  
+- Define a constant instead of duplicating this literal :
+  Pour éviter la réutilisation abusive de chaînes de caractères dans le code, nous les remplaçons par une constante String définie.
+  
+- Enfin nous implémentons au sein des méthodes updateQuality() et updateSpoiledItemQuality(int i) les items "Conjured", ce qui n'a heureusement pas trop augmenté la complexité cognitive de nos méthodes.
