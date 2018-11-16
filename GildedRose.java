@@ -1,5 +1,7 @@
 package gildedrose;
 
+import java.util.Objects;
+
 class GildedRose {
 
     private static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
@@ -34,13 +36,16 @@ class GildedRose {
     {
         return Objects.hash(this);
     }
-    
+
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals(AGEDBRIE)
                     && !items[i].name.equals(BACKSTAGE)) {
                 if (isNotSpoiled(i)) {
                     items[i].quality = items[i].quality - 1;
+                    if(items[i].name.startsWith("Conjured")){
+                        items[i].quality = items[i].quality - 1;
+                    }
                 }
             } else {
                 increaseQuality(i);
@@ -85,6 +90,9 @@ class GildedRose {
             if (!items[i].name.equals(BACKSTAGE)) {
                 if (isNotSpoiled(i)) {
                     items[i].quality = items[i].quality - 1;
+                    if(items[i].name.startsWith("Conjured")){
+                        items[i].quality = items[i].quality - 1;
+                    }
                 }
             } else {
                 items[i].quality = 0;
