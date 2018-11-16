@@ -1,22 +1,25 @@
 package gildedrose;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+//import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GildedRoseTest {
 
     private static final String AGEDBRIE = "Aged Brie";
     private static final String CONCERT = "Backstage passes to a TAFKAL80ETC concert";
 
+    private GildedRoseTest(){}
+
     @Test
     public static void foo() {
-        GildedRose appTest = new GildedRose(null);
-        GildedRose appTemoin = new GildedRose(null);
+
 
         // Fonctionnement standard
-        appTest = new GildedRose(new Item[]{new Item("Objet standard",10,20)});
-        appTemoin = new GildedRose(new Item[]{new Item("Objet standard",9,19)});
+        GildedRose appTest = new GildedRose(new Item[]{new Item("Objet standard",10,20)});
+        GildedRose appTemoin = new GildedRose(new Item[]{new Item("Objet standard",9,19)});
         appTest.updateQuality();
         assertEquals(appTest,appTemoin);
 
