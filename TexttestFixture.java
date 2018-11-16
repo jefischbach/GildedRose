@@ -2,7 +2,7 @@ package gildedrose;
 
 public class TexttestFixture {
 
-    private static final String CONCERT = "Backstage passes to a TAFKAL80ETC concert";
+    private static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
 
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
@@ -13,9 +13,9 @@ public class TexttestFixture {
                 new Item("Elixir of the Mongoose", 5, 7), //
                 new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
                 new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-                new Item(CONCERT, 15, 20),
-                new Item(CONCERT, 10, 49),
-                new Item(CONCERT, 5, 49),
+                new Item(BACKSTAGE, 15, 20),
+                new Item(BACKSTAGE, 10, 49),
+                new Item(BACKSTAGE, 5, 49),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6) };
 
